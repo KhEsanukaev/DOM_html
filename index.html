@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>интукод</title>
+</head>
+<body>
+    
+ <div id="main">
+    <ul id="list">
+        <li>html</li>
+        <li>css</li>
+    </ul>
+</div>
+  <div id="copyright">(c) INTOCODE</div>
+  <script>
+  
+  const addTitle = () => {
+    const titleElement = document.createElement('h1');
+    titleElement.textContent = 'Работа с DOM';
+
+   
+    const mainDiv = document.getElementById('main');
+
+  
+    document.body.insertBefore(titleElement, mainDiv);
+  };
+
+
+  const addArticleLink = () => {
+    const articleLink = document.createElement('a');
+    articleLink.href = 'https://javascript.ru/tutorial/dom/modify#dobavlenie-v-do'; 
+    articleLink.textContent = 'Статья о DOM';
+
+    const mainDiv = document.getElementById('main');
+
+    mainDiv.appendChild(articleLink);
+  };
+
+  const changeBackgroundColor = (color) => {
+    document.body.style.backgroundColor = color;
+  };
+
+  const addItemToList = (text) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = text;
+
+    const list = document.getElementById('list');
+
+ 
+    list.appendChild(listItem);
+  };
+
+  
+  const removeCopyright = () => {
+    const copyright = document.getElementById('copyright');
+    copyright.remove();
+  };
+
+ 
+  addTitle();
+  addArticleLink();
+  changeBackgroundColor('lightblue');
+  addItemToList('JavaScript');
+  removeCopyright();
+  </script>
+</body>
+</html>
